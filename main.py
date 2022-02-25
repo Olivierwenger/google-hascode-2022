@@ -1,17 +1,18 @@
-# This is a sample Python script.
+import output_writer
+from input_reader import read_file
+from solvers.basic_solver import solve
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+file_names = [
+    'd_dense_schedule',
+    'e_exceptional_skills',
+    'f_find_great_mentors',
+]
+
+for file_name in file_names:
+    contributors, projects = read_file(file_name)
+
+    plan = solve(contributors, projects)
+
+    output_writer.write_output(plan, file_name)
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
-print()

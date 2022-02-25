@@ -1,0 +1,4 @@
+output/*.txt
+venv/
+__pycache__/
+solvers/__pycache__/
